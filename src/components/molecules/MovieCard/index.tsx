@@ -27,12 +27,12 @@ export const MovieCard = ({ movie }: MovieCardProps) => {
       />
       <div className="px-1 py-2">
         <h3
-          className="-mb-1 truncate font-bold text-slate-900 group-hover:text-purple-600 dark:text-slate-200"
+          className="-mb-1 truncate font-bold text-slate-200 group-hover:text-purple-600"
           title={title}
         >
           {title}
         </h3>
-        <span className="text-sm font-medium tracking-tight text-slate-700 dark:text-slate-400">
+        <span className="text-sm font-medium tracking-tight text-slate-400">
           {formattedDate(release_date)}
         </span>
       </div>
