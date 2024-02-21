@@ -8,7 +8,7 @@ type AppShellProps = {
 
 const poppins = Poppins({
   subsets: ["latin"],
-  weight: ["400", "700"],
+  weight: ["400", "500", "700"],
 });
 
 // digunakan sebagai layout untuk semua halaman yang membungkus _app.tsx
@@ -17,7 +17,7 @@ export const AppShell = ({ children }: AppShellProps) => {
     <>
       <Navbar />
       <main
-        className={`${poppins.className} bg-background text-text relative mx-auto flex min-h-screen flex-col px-4 py-6 md:px-8`}
+        className={`${poppins.className} bg-background text-text container relative mx-auto flex min-h-screen flex-col px-4 md:px-8`}
       >
         {children}
       </main>
