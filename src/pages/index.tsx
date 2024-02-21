@@ -1,7 +1,13 @@
 import { MovieList } from "@/components/organisms/MovieList";
 import { axiosInstance } from "@/lib/axios";
+import { MovieResponse } from "@/types";
 
-export default function Home({ nowPlayingData, popularData }: any) {
+type HomeProps = {
+  nowPlayingData: MovieResponse;
+  popularData: MovieResponse;
+};
+
+export default function Home({ nowPlayingData, popularData }: HomeProps) {
   return (
     <div className="flex flex-col gap-y-5">
       <MovieList
