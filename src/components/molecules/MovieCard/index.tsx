@@ -10,7 +10,7 @@ export interface MovieCardProps {
 }
 
 export const MovieCard = ({ movie }: MovieCardProps) => {
-  const { id, title, backdrop_path, release_date } = movie;
+  const { id, title, poster_path, release_date } = movie;
 
   return (
     <Link
@@ -18,9 +18,9 @@ export const MovieCard = ({ movie }: MovieCardProps) => {
       className="group flex w-full flex-col transition duration-300 ease-in-out hover:scale-105"
     >
       <Image
-        src={getImageUrl(backdrop_path, "w500")}
+        src={getImageUrl(poster_path, "w500")}
         alt={`Poster of ${title}`}
-        className="aspect-[14/8] h-full w-full rounded-lg object-cover duration-500 hover:brightness-75"
+        className="aspect-[4/5] h-full w-full rounded-lg object-cover duration-500 hover:brightness-75"
         title={title}
         width={1280}
         height={720}

@@ -19,7 +19,7 @@ export type Movie = {
   original_title: string;
   overview: string | null;
   popularity: number;
-  poster_path: string | null;
+  poster_path: string;
   production_companies: {
     id: number;
     logo_path: string | null;
