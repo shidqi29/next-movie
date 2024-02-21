@@ -17,6 +17,12 @@ export const SearchInput = ({
   return (
     <form className="flex" onSubmit={onSubmit}>
       <div className="relative flex">
+        <button
+          type="submit"
+          className="absolute left-0 top-1/2 flex -translate-y-1/2 items-center justify-center p-2"
+        >
+          <PiMagnifyingGlass size={24} className="text-primary" />
+        </button>
         <input
           type="search"
           name="search"
@@ -24,16 +30,10 @@ export const SearchInput = ({
           aria-required
           aria-label="Search"
           placeholder={placeholder}
-          className="w-full rounded-lg border-2 border-slate-500 bg-slate-800 py-2 pl-4 pr-10 text-slate-200 outline-none placeholder:text-slate-400 focus:text-slate-300 focus:placeholder:text-slate-300"
+          className="bg-background text-text focus:text-text focus:placeholder:text-text w-full rounded-full py-1 pl-10 pr-4 outline-none placeholder:text-sm placeholder:italic placeholder:text-slate-600"
           onChange={onChange}
           value={value}
         />
-        <button
-          type="submit"
-          className="absolute right-0 top-1/2 flex -translate-y-1/2 items-center justify-center p-2"
-        >
-          <PiMagnifyingGlass size={24} className="text-slate-400" />
-        </button>
       </div>
     </form>
   );
