@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 
 export const useStickyNav = () => {
-  const stickyRef = useRef(null);
+  const stickyRef = useRef<any>(null);
   const [sticky, setSticky] = useState(false);
   const [offset, setOffset] = useState(0);
 
