@@ -1,10 +1,10 @@
 import Link from "next/link";
-import { PiFilmSlate } from "react-icons/pi";
 import { useState } from "react";
 import { useRouter } from "next/router";
 import { useSearchParams } from "next/navigation";
 
 import { SearchInput } from "@/components/molecules";
+import Image from "next/image";
 
 export const Navbar = () => {
   const router = useRouter();
@@ -26,11 +26,16 @@ export const Navbar = () => {
   };
 
   return (
-    <header className="sticky top-0 z-10 w-full bg-gray-900 py-2 text-slate-200 shadow shadow-slate-500">
-      <nav className="flex items-center justify-between px-10 py-4">
-        <Link href="/" className="flex items-center gap-x-2">
-          <PiFilmSlate size={28} />
-          <span className="text-xl font-medium">Next Movie</span>
+    <header className="bg-primary text-accent sticky top-0 z-10 w-full">
+      <nav className="flex items-center justify-between px-10">
+        <Link href="/" className="h-24 w-52">
+          <Image
+            src="https://21cineplex.com//theme/v5/assets/img/logo.png"
+            alt="Cinema XXI"
+            width={1280}
+            height={720}
+            className="w-full"
+          />
         </Link>
         <SearchInput
           placeholder="Search..."

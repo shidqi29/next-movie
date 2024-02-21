@@ -7,7 +7,7 @@ const nextConfig = {
         hostname: "image.tmdb.org",
       },
       {
-        hostname: "via.placeholder.com",
+        hostname: "21cineplex.com",
       },
     ],
   },

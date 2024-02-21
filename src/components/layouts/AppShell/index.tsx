@@ -17,7 +17,7 @@ export const AppShell = ({ children }: AppShellProps) => {
     <>
       <Navbar />
       <main
-        className={`${poppins.className} relative mx-auto flex min-h-screen flex-col bg-slate-900 px-4 py-6 text-slate-200 md:px-8`}
+        className={`${poppins.className} bg-background text-text relative mx-auto flex min-h-screen flex-col px-4 py-6 md:px-8`}
       >
         {children}
       </main>
