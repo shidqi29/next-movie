@@ -4,16 +4,16 @@ import { MovieList } from "@/components/organisms";
 import { axiosInstance } from "@/lib/axios";
 import { MovieResponse } from "@/types";
 
-export default function NowPlayingPage({ data }: { data: MovieResponse }) {
+export default function PopularPage({ data }: { data: MovieResponse }) {
   return (
     <>
-      <MovieList data={data.results} title="Now Playing" />
+      <MovieList data={data.results} title="Popular" />
     </>
   );
 }
 
 export async function getServerSideProps() {
-  const { data } = await axiosInstance.get("/movie/now_playing");
+  const { data } = await axiosInstance.get("/movie/popular");
 
   return {
     props: {
