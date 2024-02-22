@@ -30,7 +30,7 @@ export const SearchInput = ({
           aria-required
           aria-label="Search"
           placeholder={placeholder}
-          className="bg-background text-text focus:text-text focus:placeholder:text-text w-full rounded-full py-1 pl-10 pr-4 outline-none placeholder:text-sm placeholder:italic placeholder:text-slate-600"
+          className="w-full rounded-full bg-background py-1 pl-10 pr-4 text-text outline-none placeholder:text-sm placeholder:italic placeholder:text-slate-600 focus:text-text focus:placeholder:text-text"
           onChange={onChange}
           value={value}
         />
