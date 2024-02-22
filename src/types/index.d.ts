@@ -32,7 +32,7 @@ export type Movie = {
   }[];
   release_date: string;
   revenue: number;
-  runtime: number | null;
+  runtime: number;
   spoken_languages: {
     iso_639_1: string;
     name: string;
@@ -43,6 +43,7 @@ export type Movie = {
   video: boolean;
   vote_average: number;
   vote_count: number;
+  credits: MovieCredits;
 };
 
 export type MovieResponse = {
@@ -50,4 +51,37 @@ export type MovieResponse = {
   results: Movie[];
   total_pages: number;
   total_results: number;
+};
+
+export type MovieCredits = {
+  cast: {
+    adult: boolean;
+    gender: number;
+    id: number;
+    known_for_department: string;
+    name: string;
+    original_name: string;
+    popularity: number;
+    profile_path: string;
+    cast_id: number;
+    character: string;
+    credit_id: string;
+    order: number;
+  }[];
+
+  crew: {
+    adult: boolean;
+    gender: number;
+    id: number;
+    known_for_department: string;
+    name: string;
+    original_name: string;
+    popularity: number;
+    profile_path: string;
+    cast_id: number;
+    character: string;
+    credit_id: string;
+    department: string;
+    job: string;
+  }[];
 };

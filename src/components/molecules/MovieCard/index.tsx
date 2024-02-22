@@ -1,9 +1,9 @@
-import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-import { formattedDate, getImageUrl } from "@/utils";
+import { formattedDate } from "@/utils";
 import { Movie } from "@/types";
+import { ImagePoster } from "@/components/atoms";
 
 export interface MovieCardProps {
   movie: Movie;
@@ -17,14 +17,7 @@ export const MovieCard = ({ movie }: MovieCardProps) => {
       href={`/movie/${id}`}
       className="group flex w-full flex-col transition-all duration-300 ease-in-out"
     >
-      <Image
-        src={getImageUrl(poster_path, "w500")}
-        alt={`Poster of ${title}`}
-        className="aspect-[4/6] h-full w-full rounded-lg duration-500 hover:brightness-75"
-        title={title}
-        width={1280}
-        height={720}
-      />
+      <ImagePoster poster_path={poster_path} title={title} />
       <div className="px-1 py-2">
         <h3
           className="-mb-1 truncate font-bold text-text group-hover:text-primary"
