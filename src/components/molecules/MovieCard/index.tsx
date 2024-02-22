@@ -15,24 +15,24 @@ export const MovieCard = ({ movie }: MovieCardProps) => {
   return (
     <Link
       href={`/movie/${id}`}
-      className="group flex w-full flex-col transition duration-300 ease-in-out hover:scale-105"
+      className="group flex w-full flex-col transition-all duration-300 ease-in-out"
     >
       <Image
         src={getImageUrl(poster_path, "w500")}
         alt={`Poster of ${title}`}
-        className="aspect-[4/5] h-full w-full rounded-lg object-cover duration-500 hover:brightness-75"
+        className="aspect-[4/6] h-full w-full rounded-lg duration-500 hover:brightness-75"
         title={title}
         width={1280}
         height={720}
       />
       <div className="px-1 py-2">
         <h3
-          className="text-text group-hover:text-primary -mb-1 truncate font-bold"
+          className="-mb-1 truncate font-bold text-text group-hover:text-primary"
           title={title}
         >
           {title}
         </h3>
-        <span className="text-text text-sm font-medium tracking-tight">
+        <span className="text-sm font-medium tracking-tight text-text">
           {formattedDate(release_date)}
         </span>
       </div>
