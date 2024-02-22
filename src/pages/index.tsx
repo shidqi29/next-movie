@@ -1,3 +1,4 @@
+import { HeadMetaData } from "@/components/layouts";
 import { MovieList } from "@/components/organisms/MovieList";
 import { axiosInstance } from "@/lib/axios";
 import { MovieResponse } from "@/types";
@@ -9,6 +10,8 @@ type HomeProps = {
 
 export default function Home({ nowPlayingData, popularData }: HomeProps) {
   return (
+    <>
+    <HeadMetaData />
     <div className="flex flex-col gap-y-5">
       <MovieList
         data={nowPlayingData.results.slice(0, 8)}
@@ -23,6 +26,7 @@ export default function Home({ nowPlayingData, popularData }: HomeProps) {
         label="See All"
       />
     </div>
+    </>
   );
 }
 

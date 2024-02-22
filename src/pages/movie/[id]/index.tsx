@@ -1,10 +1,16 @@
 import React from "react";
+import Link from "next/link";
 
 import { axiosInstance } from "@/lib/axios";
 import { Movie } from "@/types";
 import { ImagePoster } from "@/components/atoms";
-import { formattedCurrency, formattedDate, getDuration } from "@/utils";
-import Link from "next/link";
+import {
+  formattedCurrency,
+  formattedDate,
+  getDuration,
+  getImageUrl,
+} from "@/utils";
+import { HeadMetaData } from "@/components/layouts";
 
 export default function MovieDetail({ data }: { data: Movie }) {
   const details = [
@@ -45,6 +51,11 @@ export default function MovieDetail({ data }: { data: Movie }) {
 
   return (
     <>
+      <HeadMetaData
+        title={data.title}
+        metaDescription={data.overview || ""}
+        ogImageUrl={getImageUrl(data.poster_path)}
+      />
       <article className="mt-10 grid grid-cols-[25%_1fr] gap-x-8">
         <ImagePoster poster_path={data.poster_path} title={data.title} />
         <section className="flex w-full flex-col">

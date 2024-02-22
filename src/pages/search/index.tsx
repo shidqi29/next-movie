@@ -4,6 +4,7 @@ import React from "react";
 import { MovieList } from "@/components/organisms";
 import { axiosInstance } from "@/lib/axios";
 import { MovieResponse } from "@/types";
+import { HeadMetaData } from "@/components/layouts";
 
 export default function SearchPage({ data }: { data: MovieResponse }) {
   const router = useRouter();
@@ -12,6 +13,7 @@ export default function SearchPage({ data }: { data: MovieResponse }) {
 
   return (
     <>
+      <HeadMetaData title={`Search: ${query}`} />
       <MovieList data={data?.results || []} title={`Search Result: ${query}`} />
     </>
   );
