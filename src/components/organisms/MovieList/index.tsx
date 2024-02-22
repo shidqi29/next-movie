@@ -12,6 +12,7 @@ export type MovieListProps = {
 };
 
 export const MovieList = ({ data, title, linkHref, label }: MovieListProps) => {
+  if (!data) return null;
   return (
     <section className="flex w-full flex-col">
       <Header title={title} linkHref={linkHref} label={label} />
