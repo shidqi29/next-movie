@@ -1,0 +1,23 @@
+import React from "react";
+
+import { MovieList } from "@/components/organisms";
+import { axiosInstance } from "@/lib/axios";
+import { MovieResponse } from "@/types";
+
+export default function UpcomingPage({ data }: { data: MovieResponse }) {
+  return (
+    <>
+      <MovieList data={data.results} title="Upcoming" />
+    </>
+  );
+}
+
+export async function getServerSideProps() {
+  const { data } = await axiosInstance.get("/movie/upcoming");
+
+  return {
+    props: {
+      data,
+    },
+  };
+}
