@@ -1,6 +1,6 @@
 import React from "react";
 import { Poppins } from "next/font/google";
-import { Navbar } from "@/components/organisms";
+import { Footer, Navbar } from "@/components/organisms";
 
 type AppShellProps = {
   children: React.ReactNode;
@@ -17,10 +17,11 @@ export const AppShell = ({ children }: AppShellProps) => {
     <>
       <Navbar />
       <main
-        className={`${poppins.className} bg-background text-text container relative mx-auto flex min-h-screen flex-col px-4 md:px-8`}
+        className={`${poppins.className} container relative mx-auto flex min-h-screen flex-col bg-background px-4 text-text md:px-8`}
       >
         {children}
       </main>
+      <Footer />
     </>
   );
 };
