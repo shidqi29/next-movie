@@ -44,6 +44,7 @@ export type Movie = {
   vote_average: number;
   vote_count: number;
   credits: MovieCredits;
+  similar: MovieSimilar;
 };
 
 export type MovieResponse = {
@@ -83,5 +84,17 @@ export type MovieCredits = {
     credit_id: string;
     department: string;
     job: string;
+  }[];
+};
+
+export type MovieSimilar = {
+  page: number;
+  results: Movie[];
+};
+
+export type genresMovie = {
+  genres: {
+    id: number;
+    name: string;
   }[];
 };

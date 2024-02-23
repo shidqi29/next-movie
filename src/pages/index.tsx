@@ -11,21 +11,21 @@ type HomeProps = {
 export default function Home({ nowPlayingData, popularData }: HomeProps) {
   return (
     <>
-    <HeadMetaData />
-    <div className="flex flex-col gap-y-5">
-      <MovieList
-        data={nowPlayingData.results.slice(0, 8)}
-        title="Now Playing"
-        linkHref="/now-playing"
-        label="See All"
-      />
-      <MovieList
-        data={popularData.results.slice(0, 8)}
-        title="Popular"
-        linkHref="/popular"
-        label="See All"
-      />
-    </div>
+      <HeadMetaData />
+      <div className="flex flex-col gap-y-5">
+        <MovieList
+          data={nowPlayingData.results.slice(0, 8)}
+          title="Now Playing"
+          linkHref="/now-playing"
+          label="See All"
+        />
+        <MovieList
+          data={popularData.results.slice(0, 8)}
+          title="Popular"
+          linkHref="/popular"
+          label="See All"
+        />
+      </div>
     </>
   );
 }

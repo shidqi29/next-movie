@@ -54,32 +54,34 @@ export default function MovieDetail({ data }: { data: Movie }) {
       <HeadMetaData
         title={data.title}
         metaDescription={data.overview || ""}
-        ogImageUrl={getImageUrl(data.poster_path)}
+        ogImageUrl={getImageUrl(data.backdrop_path)}
       />
-      <article className="mt-10 grid grid-cols-[25%_1fr] gap-x-8">
-        <ImagePoster poster_path={data.poster_path} title={data.title} />
-        <section className="flex w-full flex-col">
-          <h1 className="text-3xl font-bold">{data.title}</h1>
-          <div className="mt-5 flex gap-2">
-            {data.genres.map((genre) => (
-              <Link
-                key={genre.id}
-                href={`/genre/${genre.id}`}
-                className="rounded-full bg-primary px-3 py-1 text-sm text-background transition-all hover:bg-accent"
-              >
-                <span>{genre.name}</span>
-              </Link>
-            ))}
-          </div>
-          <div className="mt-2">
-            <p>{data.overview}</p>
-            <div className="mt-5">
-              {details.map((detail) => (
-                <div key={detail.title} className="grid grid-cols-[15%_1fr]">
-                  <p>{detail.title}</p>
-                  <p>{detail.value}</p>
-                </div>
+      <article className="mt-10 flex flex-col gap-y-10">
+        <section className="grid grid-cols-[25%_1fr] gap-x-8">
+          <ImagePoster poster_path={data.poster_path} title={data.title} />
+          <div className="flex w-full flex-col">
+            <h1 className="text-3xl font-bold">{data.title}</h1>
+            <div className="mt-5 flex gap-2">
+              {data.genres.map((genre) => (
+                <Link
+                  key={genre.id}
+                  href={`/genre/${genre.id}`}
+                  className="rounded-full bg-primary px-3 py-1 text-sm text-background transition-all hover:bg-accent"
+                >
+                  <span>{genre.name}</span>
+                </Link>
               ))}
+            </div>
+            <div className="mt-2">
+              <p>{data.overview}</p>
+              <div className="mt-5">
+                {details.map((detail) => (
+                  <div key={detail.title} className="grid grid-cols-[15%_1fr]">
+                    <p>{detail.title}</p>
+                    <p>{detail.value}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
@@ -92,7 +94,7 @@ export async function getServerSideProps(context: any) {
   const { id } = context.query;
   const { data } = await axiosInstance.get(`/movie/${id}`, {
     params: {
-      append_to_response: "credits",
+      append_to_response: "credits,similar",
     },
   });
 
